@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'home#index'
 
-  resources :recipes, only: [:index, :show]
+  resources :recipes, only: [:index, :show, :create, :update, :destroy]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
