@@ -26,6 +26,10 @@ gem 'sprockets', '~> 2'
 
 gem "foreman"
 
+gem 'devise'
+
+gem "paperclip", "~> 4.2"
+
 group :production, :staging do
   gem "rails_12factor"
   gem "rails_stdout_logging"
