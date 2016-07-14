@@ -1,20 +1,24 @@
 class RecipesController < ApplicationController
   skip_before_filter :verify_authenticity_token
+  #before_action :authenticate_user!
   
   def index
+    @user = current_user
     @recipes = if params[:keywords]
-                 Recipe.where('name ilike ?',"%#{params[:keywords]}%")
+                 @user.recipes.where('name ilike ?',"%#{params[:keywords]}%")
                else
                  []
                end
   end
 
   def show
+    @user = current_user
   	@recipe = Recipe.find(params[:id])
   end
 
   def create
-    @recipe = Recipe.new(params.require(:recipe).permit(:name,:instructions))
+    @user = current_user
+    @recipe = @user.recipes.new(params.require(:recipe).permit(:name,:instructions))
     @recipe.save
     render 'show', status: 201
   end

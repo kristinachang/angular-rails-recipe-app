@@ -28,6 +28,7 @@
   </div> <!-- end .nav-container -->
 </div> <!-- end .navbar -->
 
+<div class="container-fluid">
 <h2>Log in</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -54,6 +55,7 @@
 <% end %>
 
 <%= render "users/shared/links" %>
+</div> <!-- End .container-fluid -->
 
 <!-- Footer -->
 <div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
