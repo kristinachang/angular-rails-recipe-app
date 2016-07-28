@@ -1,4 +1,4 @@
-<header class="row">
+<header class="row" id="search">
   <h1 class="text-center col-md-6 col-md-offset-3">Find Recipes</h1>
 </header>
 <section class="row">
@@ -14,7 +14,7 @@
   </form>
 </section>
 <hr>
-<section class="row" ng-if="recipes">
+<section class="row" ng-if="recipes" id="results">
   <h1 class="text-center h2">Results</h1>
   <ul class="list-unstyled">
     <li ng-repeat="recipe in recipes | filter: keywords">

@@ -1,4 +1,4 @@
-receta = angular.module('receta',[
+heirloom = angular.module('heirloom',[
   'templates',
   'ngRoute',
   'ngResource'
@@ -7,7 +7,7 @@ receta = angular.module('receta',[
   'angular-flash.flash-alert-directive'
 ])
 
-receta.config([ '$routeProvider', 'flashProvider', 
+heirloom.config([ '$routeProvider', 'flashProvider', 
   ($routeProvider,flashProvider)->
 
     flashProvider.errorClassnames.push("alert-danger")
