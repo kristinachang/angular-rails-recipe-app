@@ -18,14 +18,14 @@ class RecipesController < ApplicationController
 
   def create
     @user = current_user
-    @recipe = @user.recipes.new(params.require(:recipe).permit(:name,:instructions))
+    @recipe = @user.recipes.new(params.require(:recipe).permit(:name,:ingredient,:instructions))
     @recipe.save
     render 'show', status: 201
   end
 
   def update
     recipe = Recipe.find(params[:id])
-    recipe.update_attributes(params.require(:recipe).permit(:name,:instructions))
+    recipe.update_attributes(params.require(:recipe).permit(:name,:ingredient,:instructions))
     head :no_content
   end
 
